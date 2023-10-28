@@ -167,11 +167,11 @@ if __name__ == "__main__":
 
     if( "自习室" not in cfg[key]["type"]) and ( "电子阅览室" not in cfg[key]["type"]):
         # 阅览室
-        if datetime.now().hour <= 20 - time_zone or datetime.now().hour == 20 - time_zone and datetime.now().minute < 30:  # github action cron定时有波动
+        if datetime.now().hour <= 10 - time_zone or datetime.now().hour == 10 - time_zone and datetime.now().minute < 30:  # github action cron定时有波动
             print("阅览室预约于21点开始预约，现在还未到预约时间，请检查下一个Action")
             exit(0)
     else:
-        if datetime.now().hour > 20 - time_zone and datetime.now().minute > 30:
+        if datetime.now().hour > 10 - time_zone and datetime.now().minute > 30:
             print("自习室已于上个Action预约，请检查上一个预约")
             exit(0)
 
